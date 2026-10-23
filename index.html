@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Joshua Miguel B. Lerio — BSIT Student Portfolio inspired by One Piece">
+  <title>Joshua Miguel B. Lerio | Grand Line Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ SCROLL PROGRESS ============ -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <a href="#home" class="logo" id="logo" aria-label="Straw Hat logo — click me 5 times">
+      <svg viewBox="0 0 40 40" class="logo-svg" aria-hidden="true">
+        <ellipse cx="20" cy="24" rx="15" ry="7" fill="#d4af37"/>
+        <path d="M7 22 Q20 8 33 22" fill="#d4af37"/>
+        <rect x="5" y="22" width="30" height="4" fill="#8b1a1a"/>
+        <circle cx="20" cy="22" r="3" fill="#8b1a1a"/>
+      </svg>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home"    class="nav-link active">Home</a></li>
+      <li><a href="#about"   class="nav-link">About</a></li>
+      <li><a href="#skills"  class="nav-link">Skills</a></li>
+      <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
+      <li><a href="#journey" class="nav-link">Journey</a></li>
+      <li><a href="#dreams"  class="nav-link">Dreams</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <button class="sound-toggle" id="soundToggle" aria-label="Toggle background music" aria-pressed="false">
+      <span class="sound-text">SOUND OFF</span>
+    </button>
+  </nav>
+
+  <!-- ================================================================
+       SECTION 1 — HOME / LUFFY
+  ================================================================ -->
+  <section id="home" class="section hero">
+    <div class="hero-bg">
+      <div class="sun"></div>
+
+      <div class="clouds">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+        <div class="cloud cloud-4"></div>
+      </div>
+
+      <div class="birds">
+        <span class="bird bird-1"></span>
+        <span class="bird bird-2"></span>
+        <span class="bird bird-3"></span>
+      </div>
+
+      <div class="ship-container">
+        <img src="images/thousand-sunny.png" alt="Thousand Sunny" class="ship-img"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <svg viewBox="0 0 300 200" class="ship-svg" style="display:none;" aria-hidden="true">
+          <path d="M20 140 Q150 180 280 140 L265 165 Q150 195 35 165 Z" fill="#0a0a0a"/>
+          <path d="M25 140 Q150 175 275 140" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.4"/>
+          <circle cx="280" cy="135" r="18" fill="#0a0a0a"/>
+          <circle cx="280" cy="135" r="10" fill="#1a1a1a"/>
+          <circle cx="280" cy="135" r="22" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.5"/>
+          <rect x="140" y="40" width="5" height="100" fill="#0a0a0a"/>
+          <path d="M145 45 Q200 85 145 125 Q90 85 145 45" fill="#d4af37" opacity="0.55"/>
+          <line x1="90" y1="85" x2="200" y2="85" stroke="#0a0a0a" stroke-width="2"/>
+          <rect x="210" y="70" width="4" height="70" fill="#0a0a0a"/>
+          <path d="M214 75 Q240 95 214 115 Q188 95 214 75" fill="#d4af37" opacity="0.45"/>
+          <path d="M140 40 L165 47 L140 54 Z" fill="#8b1a1a"/>
+        </svg>
+      </div>
+
+      <div class="ocean">
+        <div class="wave wave-1"></div>
+        <div class="wave wave-2"></div>
+        <div class="wave wave-3"></div>
+      </div>
+      <div class="mist"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Chapter One</p>
+      <h1 class="hero-title">WELCOME TO MY GRAND LINE!</h1>
+      <h2 class="hero-name">JOSHUA MIGUEL B. LERIO</h2>
+      <p class="hero-tagline">Future IT Professional &nbsp;|&nbsp; Dreamer &nbsp;|&nbsp; Pirate at Heart</p>
+      <p class="hero-intro">
+        I am a third-year BSIT student sailing through the seas of technology — learning
+        programming, databases, and web development one island at a time. Every line of
+        code is a new adventure, and I am just getting started.
+      </p>
+      <button class="btn-primary" id="startBtn">START THE ADVENTURE</button>
+    </div>
+
+    <div class="hero-character">
+      <div class="character-frame" data-char="luffy">
+        <img src="luffy.jpg" alt="Monkey D. Luffy" class="char-img"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="char-fallback" style="display:none;">
+          <span class="char-wanted">WANTED</span>
+          <span class="char-name">LUFFY</span>
+          <span class="char-role">CAPTAIN</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SECTION 2 — ABOUT / NAMI
+  ================================================================ -->
+  <section id="about" class="section about">
+    <div class="about-bg">
+      <div class="compass">
+        <div class="compass-ring"></div>
+        <div class="compass-needle"></div>
+        <div class="compass-center"></div>
+      </div>
+      <div class="map-detail map-detail-1"></div>
+      <div class="map-detail map-detail-2"></div>
+      <div class="map-detail map-detail-3"></div>
+    </div>
+
+    <div class="section-inner">
+      <div class="character-frame" data-char="nami">
+        <img src="Nami Wallpaper.jpg" alt="Nami" class="char-img"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="char-fallback" style="display:none;">
+          <span class="char-wanted">WANTED</span>
+          <span class="char-name">NAMI</span>
+          <span class="char-role">NAVIGATOR</span>
+        </div>
+      </div>
+
+      <div class="section-text">
+        <p class="section-eyebrow">Chapter Two · Navigator's Log</p>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-body">
+          I am <strong>Joshua Miguel B. Lerio</strong>, a third-year
+          <strong>Bachelor of Science in Information Technology</strong> student.
+          I am curious, hardworking, and always willing to learn something new.
+        </p>
+        <p class="section-body">
+          I believe the best way to grow is to keep moving forward — even when the
+          seas get rough. My motto says it best:
+        </p>
+        <blockquote class="motto">
+          “The only way to achieve your dreams is to keep moving forward!”
+        </blockquote>
+
+        <div class="wanted-poster reveal">
+          <div class="wanted-header">WANTED</div>
+          <div class="wanted-photo">
+            <img src="joshuap.jpg" alt="Joshua Miguel B. Lerio"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="photo-fallback" style="display:none;">JOSHUA</div>
+          </div>
+          <div class="wanted-name">JOSHUA MIGUEL B. LERIO</div>
+          <div class="wanted-bounty">₿ 3,000,000,000</div>
+          <div class="wanted-skills">Java · HTML · CSS · JS · DB</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SECTION 3 — SKILLS / ZORO
+  ================================================================ -->
+  <section id="skills" class="section skills">
+    <div class="skills-bg">
+      <div class="light-ray light-ray-1"></div>
+      <div class="light-ray light-ray-2"></div>
+      <div class="fog fog-1"></div>
+      <div class="fog fog-2"></div>
+      <div class="green-particles">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <div class="section-inner reverse">
+      <div class="section-text">
+        <p class="section-eyebrow">Chapter Three · Training Ground</p>
+        <h2 class="section-title">Skills</h2>
+        <p class="section-body">
+          These are the tools I am actively sharpening. I am honest about my level —
+          every skill below is one I am still learning and improving every day.
+        </p>
+
+        <div class="skills-grid">
+          <div class="skill-card" tabindex="0">
+            <h3>Basic Java Programming</h3>
+            <p>Learning object-oriented fundamentals, loops, methods, and simple console programs.</p>
+          </div>
+          <div class="skill-card" tabindex="0">
+            <h3>Database Management</h3>
+            <p>Understanding tables, relationships, and writing basic SQL queries for school projects.</p>
+          </div>
+          <div class="skill-card" tabindex="0">
+            <h3>HTML</h3>
+            <p>Building semantic page structures using headings, lists, links, forms, and sections.</p>
+          </div>
+          <div class="skill-card" tabindex="0">
+            <h3>CSS</h3>
+            <p>Styling layouts with flexbox, colors, typography, and responsive media queries.</p>
+          </div>
+          <div class="skill-card" tabindex="0">
+            <h3>Beginner JavaScript</h3>
+            <p>Adding interactivity with DOM events, functions, and simple animations.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="character-frame" data-char="zoro">
+        <img src="zoro.jpg" alt="Roronoa Zoro" class="char-img"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="char-fallback" style="display:none;">
+          <span class="char-wanted">WANTED</span>
+          <span class="char-name">ZORO</span>
+          <span class="char-role">SWORDSMAN</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SECTION 4 — HOBBIES / USOPP
+  ================================================================ -->
+  <section id="hobbies" class="section hobbies">
+    <div class="hobbies-bg">
+      <div class="stars">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="moon"></div>
+      <div class="mountains"></div>
+    </div>
+
+    <div class="section-inner">
+      <div class="character-frame" data-char="usopp">
+        <img src="Usopp.jpg" alt="Usopp" class="char-img"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="char-fallback" style="display:none;">
+          <span class="char-wanted">WANTED</span>
+          <span class="char-name">USOPP</span>
+          <span class="char-role">SNIPER</span>
+        </div>
+      </div>
+
+      <div class="section-text">
+        <p class="section-eyebrow">Chapter Four · Adventure Camp</p>
+        <h2 class="section-title">Hobbies &amp; Interests</h2>
+        <p class="section-body">
+          Beyond the code, these are the things that keep my spirit burning bright.
+        </p>
+
+        <div class="hobbies-grid">
+          <div class="hobby-card">
+            <div class="hobby-icon">🎮</div>
+            <h3>Playing Games</h3>
+            <p>Strategy and story-driven games sharpen my problem-solving and patience.</p>
+          </div>
+          <div class="hobby-card">
+            <div class="hobby-icon">📺</div>
+            <h3>Watching Anime</h3>
+            <p>Stories like One Piece teach me about friendship, perseverance, and dreams.</p>
+          </div>
+          <div class="hobby-card">
+            <div class="hobby-icon">💻</div>
+            <h3>Exploring Technology</h3>
+            <p>I love discovering new tools, apps, and gadgets that make life easier.</p>
+          </div>
+          <div class="hobby-card">
+            <div class="hobby-icon">⌨️</div>
+            <h3>Learning Programming</h3>
+            <p>Every new concept I learn feels like unlocking a new island on the map.</p>
+          </div>
+        </div>
+
+        <div class="treasure-wrap">
+          <button class="treasure-chest" id="treasureChest" aria-expanded="false" aria-label="Open the treasure chest">
+            <div class="chest-lid"></div>
+            <div class="chest-body"></div>
+            <div class="chest-lock"></div>
+          </button>
+          <div class="treasure-message" id="treasureMessage" role="region" aria-live="polite">
+            <p>🏴‍☠️ <strong>Treasure Unlocked!</strong></p>
+            <p>My real treasure? The endless curiosity to keep learning — and the dream of one day building technology that helps people. That's my One Piece.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SECTION 5 — IT JOURNEY / SANJI
+  ================================================================ -->
+  <section id="journey" class="section journey">
+    <div class="journey-bg">
+      <div class="sunset-glow"></div>
+      <div class="embers">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <div class="section-inner reverse">
+      <div class="section-text">
+        <p class="section-eyebrow">Chapter Five · Golden Hour</p>
+        <h2 class="section-title">My IT Journey</h2>
+        <p class="section-body">
+          Every great voyage has its chapters. Here is how my journey through
+          Information Technology has unfolded so far.
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>First Year — Setting Sail</h3>
+              <p>Discovered the basics of computer systems, programming logic, and the thrill of writing my first "Hello World."</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Second Year — Learning the Winds</h3>
+              <p>Explored Java programming, database fundamentals, and began building small web pages with HTML and CSS.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Third Year — Navigating the Grand Line</h3>
+              <p>Currently deepening my knowledge of databases, web development, and JavaScript — preparing for real-world projects.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>The Horizon Ahead</h3>
+              <p>My goal is to become a successful IT professional and build technology that makes a difference.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="character-frame" data-char="sanji">
+        <img src="Sanji.jpg" alt="Sanji" class="char-img"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="char-fallback" style="display:none;">
+          <span class="char-wanted">WANTED</span>
+          <span class="char-name">SANJI</span>
+          <span class="char-role">COOK</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SECTION 6 — DREAMS / BROOK
+  ================================================================ -->
+  <section id="dreams" class="section dreams">
+    <div class="dreams-bg">
+      <div class="dream-moon"></div>
+      <div class="dream-stars">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="music-notes">
+        <span>♪</span><span>♫</span><span>♪</span><span>♬</span><span>♫</span>
+      </div>
+    </div>
+
+    <div class="section-inner">
+      <div class="character-frame" data-char="brook">
+        <img src="brook.jpg" alt="Brook" class="char-img"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="char-fallback" style="display:none;">
+          <span class="char-wanted">WANTED</span>
+          <span class="char-name">BROOK</span>
+          <span class="char-role">MUSICIAN</span>
+        </div>
+      </div>
+
+      <div class="section-text">
+        <p class="section-eyebrow">Chapter Six · Moonlit Waters</p>
+        <h2 class="section-title">Dreams &amp; Goals</h2>
+        <p class="section-body dream-line">
+          To become a successful IT professional — one who builds useful technology
+          that helps people and solves real problems.
+        </p>
+        <p class="section-body dream-line">
+          To keep growing, keep learning, and never stop moving forward toward the
+          horizon, no matter how far it seems.
+        </p>
+        <p class="section-body dream-line">
+          To honor the dreams of everyone who believed in me, and to one day look
+          back and say: <em>"I made it."</em>
+        </p>
+
+        <div class="devil-fruit-wrap">
+          <button class="devil-fruit" id="devilFruit" aria-expanded="false" aria-label="Touch the Devil Fruit">
+            <div class="fruit-body">
+              <div class="fruit-swirl swirl-1"></div>
+              <div class="fruit-swirl swirl-2"></div>
+              <div class="fruit-swirl swirl-3"></div>
+            </div>
+            <div class="fruit-stem"></div>
+          </button>
+          <div class="devil-message" id="devilMessage" role="region" aria-live="polite">
+            <p><strong>Gomu Gomu no Mi — Awakened!</strong></p>
+            <p>You have unlocked the power of <em>Perseverance</em>. Every challenge stretches you, but you always bounce back stronger. That's the real Devil Fruit power of a future IT professional.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SECTION 7 — CONTACT / JINBE
+  ================================================================ -->
+  <section id="contact" class="section contact">
+    <div class="contact-bg">
+      <div class="underwater-rays">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="bubbles">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <div class="section-inner reverse">
+      <div class="section-text">
+        <p class="section-eyebrow">Chapter Seven · Deep Waters</p>
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-body">
+          Want to talk about tech, anime, or future projects? Feel free to reach out.
+          Replace the placeholders below with your real details.
+        </p>
+
+        <div class="contact-grid">
+          <a href="#" class="contact-card" data-placeholder="true">
+            <div class="contact-icon">📘</div>
+            <div class="contact-info">
+              <h3>Facebook</h3>
+              <p>https://www.facebook.com/joshua.balsomo.9/directory_links</p>
+            </div>
+          </a>
+          <a href="#" class="contact-card" data-placeholder="true">
+            <div class="contact-icon">💻</div>
+            <div class="contact-info">
+              <h3>GitHub</h3>
+              <p>https://github.com/Joshualerio</p>
+            </div>
+          </a>
+          <a href="#" class="contact-card" data-placeholder="true">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-info">
+              <h3>Email</h3>
+              <p>joshuamiguellerio@gmail.com</p>
+            </div>
+          </a>
+        </div>
+
+        <p class="contact-note">
+          <em>Note: These are placeholders. Edit the <code>href</code> attributes in
+          <code>index.html</code> to add your real links.</em>
+        </p>
+      </div>
+
+      <div class="character-frame" data-char="jinbe">
+        <img src="🌊 Jinbe.jpg" alt="Jinbe" class="char-img"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="char-fallback" style="display:none;">
+          <span class="char-wanted">WANTED</span>
+          <span class="char-name">JINBE</span>
+          <span class="char-role">HELMSMAN</span>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>© 2025 Joshua Miguel B. Lerio · Built with HTML, CSS &amp; JavaScript</p>
+      <p class="footer-quote">"The only way to achieve your dreams is to keep moving forward!"</p>
+    </footer>
+  </section>
+
+  <!-- ============ BACK TO TOP ============ -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- ============ EASTER EGG OVERLAY ============ -->
+  <div class="easter-egg-overlay" id="easterEggOverlay" aria-hidden="true">
+    <div class="easter-egg-content">
+      <h2>🏴‍☠️ YOU FOUND THE ONE PIECE! 🏴‍☠️</h2>
+      <p>You clicked the Straw Hat 5 times. The real treasure was the code we wrote along the way.</p>
+      <p class="easter-egg-quote">"I'm gonna be the Pirate King!" — Monkey D. Luffy</p>
+      <button class="btn-primary" id="closeEasterEgg">CLOSE</button>
+    </div>
+  </div>
+
+  <!-- ============ BACKGROUND MUSIC ============ -->
+  <!-- Never autoplays. User must click the SOUND OFF button to start. -->
+  <audio id="bgMusic" loop preload="auto">
+  <source src="audio/onepiece-theme.mp4">
+</audio>
+  <!-- ============ FLOATING QUICK NAVIGATION (BIG & OBVIOUS) ============ -->
+    <div class="quick-nav" id="quickNav">
+    <button class="quick-nav-toggle" id="quickNavToggle" aria-label="Open quick navigation" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="currentColor"/>
+      </svg>
+      <span class="quick-nav-label">NAVIGATE</span>
+    </button>
+    <nav class="quick-nav-menu" id="quickNavMenu" aria-label="Quick navigation">
+      <a href="#home"    class="quick-nav-link">Home</a>
+      <a href="#about"   class="quick-nav-link">About</a>
+      <a href="#skills"  class="quick-nav-link">Skills</a>
+      <a href="#hobbies" class="quick-nav-link">Hobbies</a>
+      <a href="#journey" class="quick-nav-link">Journey</a>
+      <a href="#dreams"  class="quick-nav-link">Dreams</a>
+      <a href="#contact" class="quick-nav-link">Contact</a>
+    </nav>
+  </div>
+      <!-- ============ CUSTOM THUNDER CURSOR ============ -->
+  <div class="cursor-bolt" id="cursorBolt" aria-hidden="true">
+    <svg viewBox="0 0 24 24">
+      <path d="M13 2 L4 14 L11 14 L10 22 L20 9 L13 9 Z" fill="currentColor"/>
+    </svg>
+  </div>
+  <div class="cursor-spark spark-1" id="spark1" aria-hidden="true"></div>
+  <div class="cursor-spark spark-2" id="spark2" aria-hidden="true"></div>
+  <div class="cursor-spark spark-3" id="spark3" aria-hidden="true"></div>
+  <div class="cursor-ripple" id="cursorRipple" aria-hidden="true"></div>
+
+    <!-- ============ THUNDER & LIGHTNING EFFECT ============ -->
+  <div class="thunder-overlay" id="thunderOverlay" aria-hidden="true">
+    <svg class="lightning-bolt" viewBox="0 0 200 400" preserveAspectRatio="xMidYMin slice">
+      <path class="bolt-path" d="M100 0 L70 150 L100 150 L60 400 L130 200 L100 200 L140 0 Z" />
+    </svg>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
