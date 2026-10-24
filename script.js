@@ -466,6 +466,7 @@
   }
 
   /* ---------- 20. THUNDER & LIGHTNING EFFECT ---------- */
+  /* ---------- 20. THUNDER & LIGHTNING EFFECT ---------- */
   const thunderOverlay = document.getElementById('thunderOverlay');
 
   if (thunderOverlay && !prefersReducedMotion) {
@@ -516,20 +517,49 @@
     }
   }
 
-  /* ---------- 21. AUTO-PLAY VIDEO — LUFFY ONLY (HOMEPAGE) ---------- */
-  const HOVER_VIDEO_SRC = 'luffy.mp4';
+   /* ---------- 21. CHARACTER HOVER VIDEOS (ALL CHARACTERS) ---------- */
+  const CHARACTER_VIDEOS = {
+    luffy: 'luffy.mp4',
+    nami:  'Namii.mp4',
+    zoro:  'Zoroo.mp4',
+    usopp: 'usopp.mp4',
+    sanji: 'sanji.mp4',
+    brook: 'brook.mp4',
+    jinbe: 'jinbe.mp4'
+  };
 
-  document.querySelectorAll('.hero-character .character-frame').forEach(function (frame) {
-    const src = frame.dataset.video || HOVER_VIDEO_SRC;
+  document.querySelectorAll('.character-frame[data-char]').forEach(function (frame) {
+    const charName = frame.dataset.char;
+    const src = frame.dataset.video || CHARACTER_VIDEOS[charName];
+    if (!src) return;
 
     // Fix pointer-events: none on .hero-character
     frame.style.pointerEvents = 'auto';
     frame.style.position = 'relative';
 
+    // Wrap the img + fallback so the video hugs the photo's exact size & shape
+    const img = frame.querySelector('.char-img');
+    const fallback = frame.querySelector('.char-fallback');
+
+    const mediaWrap = document.createElement('div');
+    mediaWrap.className = 'char-media-wrap';
+    mediaWrap.style.position = 'relative';
+    mediaWrap.style.display = 'inline-block';
+    mediaWrap.style.width = 'fit-content';
+    mediaWrap.style.maxWidth = '100%';
+    mediaWrap.style.lineHeight = '0';
+
+    const anchor = img || fallback;
+    if (anchor) {
+      frame.insertBefore(mediaWrap, anchor);
+      if (img) mediaWrap.appendChild(img);
+      if (fallback) mediaWrap.appendChild(fallback);
+    }
+
     const video = document.createElement('video');
     video.src = src;
     video.muted = true;
-    video.loop = false;          // ← play ONCE, then fade back to photo
+    video.loop = false;          // play ONCE, then fade back to photo
     video.playsInline = true;
     video.preload = 'auto';
     video.className = 'hover-video';
@@ -542,12 +572,13 @@
     video.style.height = '100%';
     video.style.objectFit = 'cover';
     video.style.opacity = '0';
-    video.style.transition = 'opacity 0.6s ease';
+    video.style.transition = 'opacity 0.6s ease, transform 0.4s ease';
     video.style.zIndex = '10';
     video.style.pointerEvents = 'none';
     video.style.borderRadius = 'inherit';
+    video.style.transform = 'scale(1)';
 
-    frame.appendChild(video);
+    mediaWrap.appendChild(video);
 
     video.addEventListener('error', function () {
       console.error('❌ Video failed to load:', src);
@@ -571,17 +602,32 @@
       video.style.opacity = '0';
     });
 
-    // Auto-play as soon as the video is ready
-    if (video.readyState >= 2) {
-      playVideo();
-    } else {
-      video.addEventListener('loadeddata', playVideo, { once: true });
-    }
-
-    // Bonus: hover to replay it
+    // Hover: play video + scale it in sync with the img's hover scale
     frame.addEventListener('mouseenter', function () {
+      video.style.transform = 'scale(1.03)';
       if (video.paused) playVideo();
     });
+
+    frame.addEventListener('mouseleave', function () {
+      video.style.transform = 'scale(1)';
+    });
+
+    // Auto-play ONCE the first time the section becomes visible
+    // (fires on page load for Luffy, and on scroll / nav-click for all others)
+    if ('IntersectionObserver' in window) {
+      const autoPlayObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            playVideo();
+            autoPlayObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25 });
+      autoPlayObserver.observe(frame);
+    } else {
+      // Fallback for very old browsers
+      if (charName === 'luffy') playVideo();
+    }
   });
 
   /* ---------- 22. CONTINUOUS LIGHTNING CURSOR ---------- */
